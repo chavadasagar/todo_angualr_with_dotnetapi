@@ -1,0 +1,20 @@
+<table border="1">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>isactive</th>
+            <th>created date</th>
+            <th>updated date</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tr *ngFor="let todo of alltodo">
+        <td>{{todo.name}}</td>
+        <td>{{todo.descrption}}</td>
+        <td>{{todo.isactive}}</td>
+        <td>{{todo.createddate}}</td>
+        <td>{{todo.updatedate}}</td>
+        <td><a routerLink="/viewtodo/{{todo.id}}">View</a>&nbsp;&nbsp;<a href="#" (click)="deletetodo(todo.id)">delete</a>&nbsp;&nbsp;<a routerLink="/updatetodo/{{todo.id}}">update</a></td>
+    </tr>
+</table>

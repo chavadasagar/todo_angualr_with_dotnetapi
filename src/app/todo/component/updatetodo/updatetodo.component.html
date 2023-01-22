@@ -1,0 +1,7 @@
+<form #todoform="ngForm"  (ngSubmit)="updatetodo(todoform.form.value)">
+    <input type="hidden" [(ngModel)]="todo.id" name="id">
+    <input type="text" [(ngModel)]="todo.name" placeholder="todo name" name="name"><br>
+    <input type="text" [(ngModel)]="todo.descrption" placeholder="description" name="descrption"><br>
+    is active  <input type="checkbox" #isactive name="isactive" [(ngModel)]="todo.isactive" ><br>
+    <input type="submit">
+</form>

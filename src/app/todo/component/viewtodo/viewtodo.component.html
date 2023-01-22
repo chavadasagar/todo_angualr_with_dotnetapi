@@ -1,0 +1,26 @@
+<table border="1">
+    <tr>
+        <td>name</td>
+        <td>{{todo.name}}</td>
+    </tr>
+    <tr>
+        <td>description</td>
+        <td>{{todo.descrption}}</td>
+    </tr>
+    <tr>
+        <td>isactive</td>
+        <td>{{todo.isactive}}</td>
+    </tr>
+    <tr>
+        <td>created date</td>
+        <td>{{todo.createddate}}</td>
+    </tr>
+    <tr>
+        <td>updated date</td>
+        <td>{{todo.updatedate}}</td>
+    </tr>
+    <tr>
+        <td>Action</td>
+        <td><a routerLink="/updatetodo/{{todo.id}}">update</a>&nbsp;&nbsp;<a href="#" (click)="deletetodo(todo.id)">delete</a></td>
+    </tr>
+</table>

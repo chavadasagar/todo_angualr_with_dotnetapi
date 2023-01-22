@@ -1,0 +1,5 @@
+<form #todoform="ngForm"  (ngSubmit)="addtodo(todoform.form.value)">
+    <input type="text" ngModel placeholder="todo name" name="Name"><br>
+    <input type="text" ngModel placeholder="description" name="Descrption"><br>
+    <input type="submit">
+</form>
