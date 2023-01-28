@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Observable } from 'rxjs';
 import { Todo } from '../../models/todo';
 import { TodoService } from '../../services/todo.service';
 
@@ -26,7 +25,6 @@ export class ViewtodoComponent implements OnInit {
 
   deletetodo(id:number)
   {
-    
     if(confirm("are you sure you want to delete this todo ?"))
     {
       this.http.deletetodo(id).subscribe(data => {

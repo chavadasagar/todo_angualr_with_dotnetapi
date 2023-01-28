@@ -1,5 +1,20 @@
-<form #todoform="ngForm"  (ngSubmit)="addtodo(todoform.form.value)">
-    <input type="text" ngModel placeholder="todo name" name="Name"><br>
-    <input type="text" ngModel placeholder="description" name="Descrption"><br>
-    <input type="submit">
-</form>
+
+
+<div class="card">
+    <div class="card-header">
+        <h2>Add todo</h2>
+    </div>
+    <div class="card-body">
+        <form #todoform="ngForm"  (ngSubmit)="addtodo(todoform.form.value)">
+            <div class="form-group">
+                <label for="">Name</label>
+                <input type="text" ngModel placeholder="Todo name" name="Name" class="form-control"><br>
+            </div>
+            <div class="form-group">
+                <label for="">Description</label>
+                <input type="text" ngModel placeholder="Description" name="Descrption" class="form-control"><br>
+            </div>
+            <input type="submit" class="btn btn-primary">
+        </form>
+    </div>
+</div>

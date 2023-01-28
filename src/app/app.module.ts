@@ -9,6 +9,8 @@ import { AddtodoComponent } from './todo/component/addtodo/addtodo.component';
 import { UpdatetodoComponent } from './todo/component/updatetodo/updatetodo.component';
 import {  HttpClientModule} from '@angular/common/http'
 import { FormsModule } from '@angular/forms';
+import { TestComponent } from './test/component/test/test.component';
+import { TodonavbarComponent } from './todo/component/todonavbar/todonavbar.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +19,8 @@ import { FormsModule } from '@angular/forms';
     AlltodoComponent,
     AddtodoComponent,
     UpdatetodoComponent,
+    TestComponent,
+    TodonavbarComponent,
 
   ],
   imports: [

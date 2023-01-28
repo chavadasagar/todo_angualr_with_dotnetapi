@@ -1,7 +1,26 @@
-<form #todoform="ngForm"  (ngSubmit)="updatetodo(todoform.form.value)">
-    <input type="hidden" [(ngModel)]="todo.id" name="id">
-    <input type="text" [(ngModel)]="todo.name" placeholder="todo name" name="name"><br>
-    <input type="text" [(ngModel)]="todo.descrption" placeholder="description" name="descrption"><br>
-    is active  <input type="checkbox" #isactive name="isactive" [(ngModel)]="todo.isactive" ><br>
-    <input type="submit">
-</form>
+<div class="card">
+    <div class="card-header">
+        <h2>Add todo</h2>
+    </div>
+    <div class="card-body">
+        <form #todoform="ngForm" (ngSubmit)="updatetodo(todoform.form.value)">
+            <input type="hidden" [(ngModel)]="todo.id" name="id">
+            <div class="form-group">
+                <label for="">Name</label>
+                <input type="text" [(ngModel)]="todo.name" class="form-control" placeholder="todo name" name="name">
+            </div>
+            <div class="form-group">
+                <label for="">Name</label>
+                <input type="text" [(ngModel)]="todo.descrption" placeholder="description" class="form-control"
+                    name="descrption">
+            </div>
+            <div class="form-check mt-2">
+                <input class="form-check-input" type="checkbox" #isactive name="isactive" [(ngModel)]="todo.isactive">
+                <label class="form-check-label" for="flexCheckDefault">
+                    is active
+                </label>
+            </div>
+            <input type="submit" class="btn btn-primary mt-2">
+        </form>
+    </div>
+</div>

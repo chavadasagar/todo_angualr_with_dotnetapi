@@ -1,20 +1,52 @@
-<table border="1">
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Description</th>
-            <th>isactive</th>
-            <th>created date</th>
-            <th>updated date</th>
-            <th>Action</th>
-        </tr>
-    </thead>
-    <tr *ngFor="let todo of alltodo">
-        <td>{{todo.name}}</td>
-        <td>{{todo.descrption}}</td>
-        <td>{{todo.isactive}}</td>
-        <td>{{todo.createddate}}</td>
-        <td>{{todo.updatedate}}</td>
-        <td><a routerLink="/viewtodo/{{todo.id}}">View</a>&nbsp;&nbsp;<a href="#" (click)="deletetodo(todo.id)">delete</a>&nbsp;&nbsp;<a routerLink="/updatetodo/{{todo.id}}">update</a></td>
-    </tr>
-</table>
+<div class="card">
+    <div class="card-header">
+        <h2>Todo listing</h2>
+    </div>
+    <div class="card-body">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>isactive</th>
+                    <th>created date</th>
+                    <th>updated date</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let todo of alltodo">
+                    <td>{{todo.name}}</td>
+                    <td>{{todo.descrption}}</td>
+                    <td>{{todo.isactive}}</td>
+                    <td>{{todo.createddate}}</td>
+                    <td>{{todo.updatedate}}</td>
+                    <td>
+                        <a class="btn btn-outline-primary" routerLink="/viewtodo/{{todo.id}}">View</a>&nbsp;&nbsp;
+                        <a class="btn btn-outline-danger" href="#" (click)="deletetodo(todo.id)">delete</a>&nbsp;&nbsp;
+                        <!-- <a class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#model"
+                            href="#">delete</a>&nbsp;&nbsp; -->
+                        <a class="btn btn-outline-info" routerLink="/updatetodo/{{todo.id}}">update</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="modal fade" id="model" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalToggleLabel">Confirm</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Are you sure you want to delete this todo ?
+            </div>
+            <div class="modal-footer">
+               <button class="btn btn-secondary">Cancel</button>
+               <button class="btn btn-danger">Delete</button>
+            </div>
+        </div>
+    </div>
+    

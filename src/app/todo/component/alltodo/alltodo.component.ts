@@ -8,19 +8,17 @@ import { TodoService } from '../../services/todo.service';
 })
 export class AlltodoComponent implements OnInit {
 
-  alltodo:any
+  alltodo: any
 
-  constructor(private todo:TodoService) { 
+  constructor(private todo: TodoService) {
     todo.getAlltodo().subscribe(data => {
       this.alltodo = data;
     });
   }
 
-  deletetodo(id:number)
-  {
+  deletetodo(id: number) {
     debugger
-    if(confirm("are you sure you want to delete this todo ?"))
-    {
+    if (confirm("are you sure you want to delete this todo ?")) {
       this.todo.deletetodo(id).subscribe(data => {
         console.log(data)
       });
@@ -29,8 +27,22 @@ export class AlltodoComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  formatdate(date: any) {
+
+    if (date == null) {
+      return null;
+    }
+    else {
 
 
-
-
+      let newdt = new Date(date);
+      debugger
+      let result = "[dd]/[mm]/[yyyy] [lt]";
+      return result
+        .replace("[dd]", newdt.getDate().toString())
+        .replace("[mm]", newdt.getMonth().toString())
+        .replace("[yyyy]", newdt.getFullYear().toString())
+        .replace("[lt]",newdt.toLocaleString())
+    }
+  }
 }

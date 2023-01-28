@@ -1,0 +1,5 @@
+<form (ngSubmit)="showformdata(testform.form.value)" #testform="ngForm">
+    <input ngModel name="name" type="text"  required><br>
+    <input ngModel name="age" type="text" required><br>
+    <button type="submit" [disabled]="!testform.valid">submit</button>
+</form>
